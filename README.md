@@ -98,6 +98,7 @@ ehburp/
 └── LICENSE            # All Rights Reserved - lihat sebelum redistribusi
 ```
 
+<h1> Images Dokumentasi <h1>
 <p align="center">
   <img src="static/1.jpg" width="23%">
   <img src="static/2.jpg" width="23%">
