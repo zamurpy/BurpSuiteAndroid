@@ -14,6 +14,10 @@ enteng buat **Termux** (Android) maupun desktop biasa.
 > memodifikasi traffic pihak lain tanpa izin adalah tindak pidana di
 > sebagian besar yurisdiksi.
 
+<p align="center">
+  <img src="static/foto.png" width="100%" alt="Preview Ethical Hacking Burp GUI">
+</p>
+
 ## Fitur
 
 - **Proxy HTTP & HTTPS** (MITM via Root CA yang di-generate sendiri, sama
