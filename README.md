@@ -78,7 +78,7 @@ localhost tetap bisa diakses karena satu device yang sama).
   Brotli (`br`) perlu modul `brotli` tambahan (`pip install brotli`)
 
   <p align="center">
-  <img src="static/Bro.gif" width="50%" alt="Preview">
+  <video src="static/Bro.mp4" width="50%" controls autoplay muted loop></video>
 </p>
 
 ## Struktur File
