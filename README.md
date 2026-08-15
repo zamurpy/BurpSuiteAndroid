@@ -77,6 +77,15 @@ localhost tetap bisa diakses karena satu device yang sama).
 - Transfer-Encoding chunked & Content-Encoding gzip/deflate udah dihandle;
   Brotli (`br`) perlu modul `brotli` tambahan (`pip install brotli`)
 
+  <p align="center">
+  <img src="static/1.jpg" width="45%">
+  <img src="static/2.jpg" width="45%">
+</p>
+<p align="center">
+  <img src="static/3.jpg" width="45%">
+  <img src="static/4.jpg" width="45%">
+</p>
+
 ## Struktur File
 
 ```
