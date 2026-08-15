@@ -77,10 +77,6 @@ localhost tetap bisa diakses karena satu device yang sama).
 - Transfer-Encoding chunked & Content-Encoding gzip/deflate udah dihandle;
   Brotli (`br`) perlu modul `brotli` tambahan (`pip install brotli`)
 
-  <p align="center">
-  <video src="static/Bro.mp4" width="50%" controls autoplay muted loop></video>
-</p>
-
 ## Struktur File
 
 ```
@@ -101,6 +97,13 @@ ehburp/
 ├── install_termux.sh
 └── LICENSE            # All Rights Reserved - lihat sebelum redistribusi
 ```
+
+<p align="center">
+  <img src="static/1.jpg" width="23%">
+  <img src="static/2.jpg" width="23%">
+  <img src="static/3.jpg" width="23%">
+  <img src="static/4.jpg" width="23%">
+</p>
 
 ## Lisensi
 
