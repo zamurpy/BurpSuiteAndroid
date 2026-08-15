@@ -36,7 +36,7 @@ enteng buat **Termux** (Android) maupun desktop biasa.
 
 ```bash
 pkg install git
-# extract folder ehburp ini, lalu:
+git clone https://github.com/zamurpy/BurpSuiteAndroid
 cd ehburp
 bash install_termux.sh
 python app.py
