@@ -99,5 +99,5 @@ ehburp/
 Source-available, **All Rights Reserved** — lihat file `LICENSE`. Boleh
 dipakai buat testing pribadi/edukasi, tapi **gak boleh diredistribusi,
 dimodifikasi, atau diklaim jadi karya orang lain** tanpa izin tertulis dari
-ZamurSec. Kalau mau kontribusi atau minta izin, gabung Discord:
+ZamurSec. gabung Discord:
 https://discord.com/invite/AA92kB5GSB
