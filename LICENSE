@@ -1,0 +1,50 @@
+Ethical Hacking Burp - Custom License (Source-Available, All Rights Reserved)
+================================================================================
+
+Copyright (c) 2026 ZamurSec. All rights reserved.
+
+This software ("Ethical Hacking Burp") and its accompanying source code are
+made available for viewing and personal use under the following terms:
+
+1. PERMITTED USE
+   You may download, run, and use this software for your own personal,
+   educational, or authorized security-testing purposes (e.g. against
+   systems you own or have explicit written permission to test).
+
+2. NOT PERMITTED WITHOUT WRITTEN PERMISSION FROM THE AUTHOR
+   Unless you have received prior written consent from ZamurSec, you may
+   NOT:
+     a. Redistribute this software or any modified version of it, in
+        source or compiled form, on any platform (GitHub, forums,
+        marketplaces, Discord, etc.);
+     b. Modify, fork, reverse-engineer, or create derivative works based
+        on this software for the purpose of redistribution;
+     c. Remove or alter this license, the author attribution, or the
+        "Author: ZamurSec" banner/comments present in the source files;
+     d. Claim authorship of this software or represent it as your own
+        work, in whole or in part;
+     e. Sell, sublicense, or otherwise commercially exploit this software.
+
+3. NO WARRANTY
+   This software is provided "AS IS", without warranty of any kind,
+   express or implied, including but not limited to the warranties of
+   merchantability, fitness for a particular purpose, and
+   non-infringement. In no event shall the author be liable for any
+   claim, damages, or other liability arising from the use of this
+   software.
+
+4. LEGAL / ETHICAL USE ONLY
+   This software is a security-testing tool (proxy interceptor / repeater
+   / intruder) intended strictly for authorized penetration testing,
+   security research, and educational purposes. You are solely
+   responsible for ensuring you have explicit authorization before
+   testing any system that is not your own. The author accepts no
+   responsibility for misuse of this software.
+
+5. CONTACT
+   For permission requests, collaboration, or questions, join the
+   Discord community: https://discord.com/invite/AA92kB5GSB
+
+--------------------------------------------------------------------------------
+By downloading, copying, or running this software, you agree to the terms
+above. If you do not agree, you must not use this software.
