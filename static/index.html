@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethical Hacking Burp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- APP TITLE -->
+  <div class="app-title">
+    ETHICAL HACKING BURP
+    <a href="https://discord.com/invite/AA92kB5GSB" target="_blank" rel="noopener" class="discord-btn">
+      💬 Join Discord
+    </a>
+  </div>
+
+  <!-- STATUS BAR -->
+  <div class="statusbar">
+    <span id="proxyStatusText">Proxy: STOPPED</span>
+    <div class="statusbar-actions">
+      <button id="btnStartStop" class="btn-small btn-green">START</button>
+      <button id="btnCaInfo" class="btn-small btn-outline">CA</button>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" data-tab="history">
+      <div class="tab-icon">⟲</div>HISTORY
+    </button>
+    <button class="tab" data-tab="intercept">
+      <div class="tab-icon">⏸</div>INTERCEPT
+    </button>
+    <button class="tab" data-tab="repeater">
+      <div class="tab-icon">↺</div>REPEATER
+    </button>
+    <button class="tab" data-tab="intruder">
+      <div class="tab-icon">🐞</div>INTRUDER
+    </button>
+    <button class="tab" data-tab="decoder">
+      <div class="tab-icon">&lt;&gt;</div>DECODER
+    </button>
+  </div>
+
+  <!-- HISTORY PANEL -->
+  <div class="panel active" id="panel-history">
+    <div class="row-between">
+      <span class="label-lg">HTTP HISTORY</span>
+      <span class="link-orange" id="btnClearHistory">🗑 CLEAR</span>
+    </div>
+    <select id="historyHostFilter" class="host-filter">
+      <option value="">Semua Host</option>
+    </select>
+    <div class="history-list" id="historyList"></div>
+    <div class="pagination" id="historyPagination">
+      <button id="btnPrevPage" class="btn-page">‹ Prev</button>
+      <span id="pageInfo">1 / 1</span>
+      <button id="btnNextPage" class="btn-page">Next ›</button>
+    </div>
+    <div class="history-detail" id="historyDetail">
+      <div class="empty-hint">Select an item to view details.</div>
+    </div>
+  </div>
+
+  <!-- INTERCEPT PANEL -->
+  <div class="panel" id="panel-intercept">
+    <div class="row-between">
+      <span class="label-lg">INTERCEPTION</span>
+      <label class="switch">
+        <input type="checkbox" id="interceptToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="pause-hint" id="pauseHint" style="display:none">⏸ Auto-refresh paused (sedang edit)</div>
+    <div id="interceptBody">
+      <div class="empty-hint">Tidak ada request yang tertahan.</div>
+    </div>
+  </div>
+
+  <!-- REPEATER PANEL -->
+  <div class="panel" id="panel-repeater">
+    <div class="row-between">
+      <span class="label-lg">REQUEST</span>
+      <span class="link-orange" id="btnNewManual">+ NEW MANUAL REQUEST</span>
+    </div>
+    <div class="target-row">
+      <input id="rHost" placeholder="host (mis: internal.local)">
+      <input id="rPort" placeholder="port" value="80" style="max-width:80px">
+      <label class="tls-check"><input type="checkbox" id="rTls"> TLS</label>
+    </div>
+    <textarea id="repeaterRequest" class="mono-box" rows="10" placeholder="GET /path HTTP/1.1&#10;Host: example.com&#10;&#10;"></textarea>
+    <button id="btnSend" class="btn-full btn-orange">&gt; SEND</button>
+    <div class="label-lg" style="margin-top:16px">RESPONSE</div>
+    <pre id="repeaterResponse" class="mono-box response-box"></pre>
+  </div>
+
+  <!-- INTRUDER PANEL -->
+  <div class="panel" id="panel-intruder">
+    <div class="intruder-config">
+      <div class="label-red">PAYLOAD CONFIG (Sniper)</div>
+      <p class="hint">Place '§' markers where payloads should be injected.</p>
+      <div class="target-row">
+        <input id="iHost" placeholder="host">
+        <input id="iPort" placeholder="port" value="80" style="max-width:80px">
+        <label class="tls-check"><input type="checkbox" id="iTls"> TLS</label>
+      </div>
+      <textarea id="intruderTemplate" class="mono-box" rows="6" placeholder="GET /login?user=§payload§ HTTP/1.1&#10;Host: example.com&#10;&#10;"></textarea>
+      <textarea id="intruderPayloads" class="mono-box" rows="4" placeholder="Payload, satu per baris&#10;admin&#10;root&#10;test"></textarea>
+
+      <div class="threads-row">
+        <span>THREADS:</span>
+        <input type="range" id="iThreads" min="1" max="30" value="5">
+        <span id="iThreadsVal">5</span>
+      </div>
+
+      <button id="btnAttack" class="btn-full btn-red">ATTACK</button>
+    </div>
+
+    <table class="results-table">
+      <thead>
+        <tr><th>ID</th><th>Payload</th><th>Status</th><th>Length</th><th>Time</th></tr>
+      </thead>
+      <tbody id="intruderResults"></tbody>
+    </table>
+  </div>
+
+  <!-- DECODER PANEL -->
+  <div class="panel" id="panel-decoder">
+    <div class="label-lg">INPUT</div>
+    <textarea id="decInput" class="mono-box" rows="3"></textarea>
+    <div class="decoder-grid">
+      <button class="btn-pill" data-op="urldec">URL Dec</button>
+      <button class="btn-pill" data-op="urlenc">URL Enc</button>
+      <button class="btn-pill" data-op="b64dec">B64 Dec</button>
+      <button class="btn-pill" data-op="b64enc">B64 Enc</button>
+      <button class="btn-pill" data-op="hexdec">Hex Dec</button>
+      <button class="btn-pill" data-op="hexenc">Hex Enc</button>
+    </div>
+    <div class="row-between">
+      <span class="label-lg">OUTPUT</span>
+      <span class="copy-icon" id="btnCopyDec" title="Copy">⧉</span>
+    </div>
+    <textarea id="decOutput" class="mono-box" rows="3" readonly></textarea>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="app-footer">
+    <span>Ethical Hacking Burp © 2026 ZamurSec — All Rights Reserved</span>
+    <a href="https://discord.com/invite/AA92kB5GSB" target="_blank" rel="noopener">Discord</a>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
