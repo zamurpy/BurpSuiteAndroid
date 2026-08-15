@@ -37,7 +37,7 @@ enteng buat **Termux** (Android) maupun desktop biasa.
 ```bash
 pkg install git
 git clone https://github.com/zamurpy/BurpSuiteAndroid
-cd ehburp
+cd BurpSuiteAndroid
 bash install_termux.sh
 python app.py
 ```
@@ -45,7 +45,8 @@ python app.py
 ### Di Linux/Mac/WSL/Desktop biasa
 
 ```bash
-cd ehburp
+git clone https://github.com/zamurpy/BurpSuiteAndroid
+cd BurpSuiteAndroid
 pip install -r requirements.txt
 python app.py
 ```
