@@ -38,7 +38,7 @@ enteng buat **Termux** (Android) maupun desktop biasa.
 pkg install git
 git clone https://github.com/zamurpy/BurpSuiteAndroid
 cd BurpSuiteAndroid
-bash install_termux.sh
+pip install -r requirements.txt
 python app.py
 ```
 
@@ -48,7 +48,7 @@ python app.py
 git clone https://github.com/zamurpy/BurpSuiteAndroid
 cd BurpSuiteAndroid
 pip install -r requirements.txt
-python app.py
+python3 app.py
 ```
 
 Lalu buka **http://127.0.0.1:5000** di browser (di Termux, buka browser HP-nya —
